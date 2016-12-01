@@ -3,5 +3,6 @@
     --listen 0.0.0.0 \
     --port 8181 \
     -a $USERNAME:$PASSWORD \
-    -w /workspace
+    -w /workspace \
+    --collab
 
