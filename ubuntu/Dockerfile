@@ -1,5 +1,5 @@
 FROM ubuntu:xenial
-MAINTAINER Gerard Braad <me@gbraad.nl>
+MAINTAINER Per-Arne Andersen <per@sysx.no>
 
 # Use a script to configure the container. This way we can
 # split up the operations and do it all in a single layer.

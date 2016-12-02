@@ -12,7 +12,8 @@ dnf install -y \
     which \
     sudo \
     nss_wrapper \
-    gettext
+    gettext \
+    zip
 
 # Create user
 adduser user -u 1000 -g 0 -r -m -d /home/user/ -c "Default Application User" -l
@@ -20,7 +21,7 @@ echo "user ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/user
 chmod 0440 /etc/sudoers.d/user
 
 # Ansible deployment
-curl -sSL https://github.com/gbraad/ansible-playbooks/raw/master/playbooks/install-c9sdk.yml -o /tmp/install.yml
+curl -sSL https://raw.githubusercontent.com/perara/docker-c9ide/master/ansible/install-c9sdk.yml -o /tmp/install.yml
 su - user -c "ansible-playbook /tmp/install.yml"
 
 ## Create work directory

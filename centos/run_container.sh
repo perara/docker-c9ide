@@ -10,11 +10,12 @@ yum install -y \
     ansible \
     tar \
     which \
-    sudo
+    sudo \
+    zip
 
 # Ansible deployment
 cd /tmp
-curl -sSL https://github.com/gbraad/ansible-playbooks/raw/master/playbooks/install-c9sdk.yml -o install.yml
+curl -sSL https://raw.githubusercontent.com/perara/docker-c9ide/master/ansible/install-c9sdk.yml -o install.yml
 
 # Create user
 adduser user
@@ -24,7 +25,7 @@ chmod 0440 /etc/sudoers.d/user
 # Ansible deployment
 ## Remove requiretty
 sed -i 's/Defaults    requiretty/Defaults    !requiretty/g' /etc/sudoers
-curl -sSL https://github.com/gbraad/ansible-playbooks/raw/master/playbooks/install-c9sdk.yml -o /tmp/install.yml
+curl -sSL https://raw.githubusercontent.com/perara/docker-c9ide/master/ansible/install-c9sdk.yml -o /tmp/install.yml
 su - user -c "ansible-playbook /tmp/install.yml"
 ## Reset the requiretty
 sed -i 's/Defaults    !requiretty/Defaults    requiretty/g' /etc/sudoers
