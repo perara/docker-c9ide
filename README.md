@@ -10,6 +10,7 @@ An alternative automated build is available at the [Docker registry](https://hub
     `docker pull perara/c9ide:centos7`
   * Ubuntu 16.04 (xenial):  
     `docker pull gbraad/c9ide:ubuntu1604`
+    
 Usage
 -----
 
