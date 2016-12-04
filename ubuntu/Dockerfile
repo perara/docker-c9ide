@@ -15,6 +15,7 @@ EXPOSE 8181
 
 ENV USERNAME ""
 ENV PASSWORD ""
+ENV HTPASSWD ""
 
 ADD run_usercommand.sh /tmp/
 
