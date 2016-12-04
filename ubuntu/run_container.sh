@@ -32,4 +32,4 @@ apt-get remove -y --auto-remove \
     curl \
     ansible 
 apt-get clean
-rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /root/.cache
+#rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /root/.cache
