@@ -17,14 +17,15 @@ adduser --disabled-password --gecos '' user
 adduser user sudo
 echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-# Ansible deployment
-curl -sSL https://raw.githubusercontent.com/perara/docker-c9ide/master/ansible/install-c9sdk.yml -o /tmp/install.yml
-su - user -c "ansible-playbook /tmp/install.yml"
-
 # Create work directory
 mkdir -p /workspace
 chown user /workspace
 chmod -R 777 /workspace
+
+# Ansible deployment
+curl -sSL https://raw.githubusercontent.com/perara/docker-c9ide/master/ansible/install-c9sdk.yml -o /tmp/install.yml
+su - user -c "ansible-playbook /tmp/install.yml"
+
 
 # Clean up
 apt-get remove -y --auto-remove \
