@@ -17,11 +17,6 @@ adduser --disabled-password --gecos '' user
 adduser user sudo
 echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-# Create -p /etc/nginx/
-mkdir -p /etc/nginx/
-touch /etc/nginx/htpasswd
-echo $HTPASSWD > /etc/nginx/htpasswd
-
 # Create work directory
 mkdir -p /workspace
 chown user /workspace
