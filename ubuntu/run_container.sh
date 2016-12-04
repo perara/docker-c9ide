@@ -24,6 +24,7 @@ su - user -c "ansible-playbook /tmp/install.yml"
 # Create work directory
 mkdir -p /workspace
 chown user /workspace
+chmod -R 777 /workspace
 
 # Clean up
 apt-get remove -y --auto-remove \
